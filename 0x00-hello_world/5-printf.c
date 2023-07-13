@@ -8,6 +8,6 @@
 
 int main(void)
 {
-	printf("%s\n", "with proper grammer, but the outcome is a piece of art,");
+	printf("with proper grammer, %s the outcome is a piece of %s,\n", "but", "art");
 	return (0);
 }

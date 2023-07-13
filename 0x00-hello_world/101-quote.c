@@ -7,6 +7,10 @@
  */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	char quote[] = "and that piece of art is useful";
+	char name[] = "Dora Korpar";
+	char date[] = "2015-10-19";
+
+	fprintf(stderr, "%s\" - %s, %s\n", quote, name, date);
 	return (1);
 }

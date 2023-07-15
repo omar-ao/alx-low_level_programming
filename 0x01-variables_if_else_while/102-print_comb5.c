@@ -3,38 +3,33 @@
 /**
  * main - Entry point
  *
- * Description: Prints all possible combinations of
- * two two-digit numbers.
+ * Description: Prints all possible combinations of two two-digit numbers
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i, j, k, m;
+	int i, j;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i < 99; i++)
 	{
-		for (j = 48; j < 57; j++)
+		for(j = i; j <= 99; j++)
 		{
-			for (k = i; k <= 57; k++)
-			{
-				for (m = 48; m <= 57; m++)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(32); /* Print a space */
-					putchar(k);
-					putchar(m);
+			if (i == j)
+				continue;
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			putchar(' ');
+			putchar(j / 10 + '0');
+			putchar(j % 10 + '0');
 
-					if ((i + j + k + m) != (57 + 56 + 57 + 57))
-					{
-						putchar(44); /* Print a comma */
-						putchar(32); /* Print a space */
-					}
-				}
+			if ((i + j) != (98 + 99))
+			{
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	putchar(10); /* Print a new line */
+	putchar(10); /* print a new line */
 	return (0);
 }

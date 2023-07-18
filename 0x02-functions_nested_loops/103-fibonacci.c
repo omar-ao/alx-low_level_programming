@@ -13,7 +13,7 @@ int main(void)
 
 	first = 1, second = 2;
 
-	sum = 0;
+	sum = 2;
 
 	while (next < MAX_TERM)
 	{

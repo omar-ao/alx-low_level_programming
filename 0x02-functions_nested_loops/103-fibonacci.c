@@ -24,7 +24,7 @@ int main(void)
 		second = next;
 	}
 
-	result = sum;
+	result = sum + 4;
 
 	printf("%lu\n", result);
 	return (0);

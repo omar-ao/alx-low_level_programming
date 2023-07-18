@@ -21,8 +21,6 @@ int main(void)
 /**
  * sum_even_fibonacci - Find the sum of the fibonacci numbers n
  * @limit: The maximum term of fibonacci
- * @n: index
- * @sum: The sum of fibonaccis
  * Return: Sum
  */
 unsigned long sum_even_fibonacci(unsigned long limit)
@@ -33,7 +31,7 @@ unsigned long sum_even_fibonacci(unsigned long limit)
 	sum = 2;
 
 	next = 0;
-	
+
 	while (next <= limit)
 	{
 		next = first + second;

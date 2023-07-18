@@ -19,10 +19,11 @@ int main(void)
 	{
 		next = first + second;
 		if (next % 2 == 0)
-			sum += next;
+			sum = sum + next;
 		first = second;
 		second = next;
 	}
+
 	printf("%lu\n", sum);
 	return (0);
 }

@@ -9,13 +9,13 @@
  */
 int main(void)
 {
-	unsigned long first, second, next, sum, result;
+	unsigned long first, second, next, sum;
 
 	first = 1, second = 2;
 
 	sum = 2;
 
-	while (next < MAX_TERM)
+	for ( ;next < MAX_TERM; )
 	{
 		next = first + second;
 		if (next % 2 == 0)
@@ -24,8 +24,6 @@ int main(void)
 		second = next;
 	}
 
-	result = sum + 4;
-
-	printf("%lu\n", result);
+	printf("%lu\n", sum);
 	return (0);
 }

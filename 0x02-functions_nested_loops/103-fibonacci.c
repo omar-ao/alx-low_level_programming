@@ -2,8 +2,7 @@
 
 #define MAX_TERM 4000000 /* Max fibonacci term */
 
-unsigned long fibonacci(int);
-unsigned long sum_even_fibonacci(unsigned long, int, unsigned long);
+unsigned long sum_even_fibonacci(unsigned long);
 
 /**
  * main - Entry point
@@ -14,23 +13,9 @@ int main(void)
 {
 	unsigned long result;
 
-	result = sum_even_fibonacci(MAX_TERM, 1, 0);
+	result = sum_even_fibonacci(MAX_TERM);
 	printf("%lu\n", result);
 	return (0);
-}
-
-/**
- * fibonacci - Find fibonacci of n
- * @n: Integer
- * Return: Fibonacci of n
- */
-unsigned long fibonacci(int n)
-{
-	if (n <= 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	return (fibonacci(n - 1) + fibonacci(n - 2));
 }
 
 /**
@@ -40,13 +25,22 @@ unsigned long fibonacci(int n)
  * @sum: The sum of fibonaccis
  * Return: Sum
  */
-unsigned long sum_even_fibonacci(unsigned long limit, int n, unsigned long sum)
+unsigned long sum_even_fibonacci(unsigned long limit)
 {
-	unsigned long current_fibo = fibonacci(n);
+	unsigned long first, second, next, sum;
 
-	if (current_fibo >= limit)
-		return (sum);
-	if (current_fibo % 2 == 0)
-		sum = sum + current_fibo;
-	return (sum_even_fibonacci(limit, n + 1, sum));
+	first = 1, second = 2;
+	sum = 2;
+
+	next = 0;
+	
+	while (next <= limit)
+	{
+		next = first + second;
+		if (next % 2 == 0)
+			sum = sum + next;
+		first = second;
+		second = next;
+	}
+	return (sum);
 }

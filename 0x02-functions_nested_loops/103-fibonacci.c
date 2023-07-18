@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned long first, second, next, sum;
+	unsigned long first, second, next, sum, result;
 
 	first = 1, second = 2;
 
@@ -24,6 +24,8 @@ int main(void)
 		second = next;
 	}
 
-	printf("%lu\n", sum);
-	return (sum);
+	result = sum;
+
+	printf("%lu\n", result);
+	return (0);
 }

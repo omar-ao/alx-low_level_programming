@@ -2,6 +2,7 @@
 #define MAIN_H
 
 /* declarations */
-void _putchar(const char *str);
+void _putchar(char c);
+void print_alphabet(void);
 
 #endif

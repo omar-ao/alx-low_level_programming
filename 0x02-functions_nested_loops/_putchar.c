@@ -5,12 +5,8 @@
  * _putchar - Prints a character to the standard output
  * Return: nothing
  */
-void _putchar(const char *str)
+void _putchar(char c)
 {
-	int i;
-
-	for (i = 0; str[i] != '\0'; ++i)
-		;
-	write(1, str, i);
+	write(1, &c, 1);
 }
 

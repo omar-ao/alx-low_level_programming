@@ -12,7 +12,7 @@ int main(void)
 {
 	unsigned long first = 0, second = 1, next;
 	unsigned long first_half0, first_half1;
-	unsigned long second_half0, second_half1;
+	unsigned long half0, half1, second_half0, second_half1;
 	int i;
 
 	for (i = 0; i < 92; i++)
@@ -26,25 +26,25 @@ int main(void)
 	first_half0 = first / MID;
 	first_half1 = first % MID;
 	second_half0 = second / MID;
-	second_half1 = second / MID;
+	second_half1 = second % MID;
 
 	for (i = 93 ; i <= 98; i++)
 	{
-		first = first_half0 + first_half1;
-		second = second_half0 + second_half1;
+		half0 = first_half0 + second_half0;
+		half1 = first_half1 + second_half1;
 
-		if (first_half0 + first_half1 > 9999999999)
+		if (half1 > 9999999999)
 		{
-			first += 1;
-			second %= MID;
+			half0 += 1;
+			half1 %= MID;
 		}
-		printf("%lu%lu", first, second);
+		printf("%lu%lu", half0, half1);
 		if (i != 98)
 			printf(", ");
 		first_half0 = second_half0;
 		first_half1 = second_half1;
-		second_half0 = first;
-		second_half1 = second;
+		second_half0 = half0;
+		second_half1 = half1;
 	}
 	printf("\n");
 	return (0);

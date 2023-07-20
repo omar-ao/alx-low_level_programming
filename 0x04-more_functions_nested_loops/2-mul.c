@@ -2,7 +2,7 @@
 
 /**
  * mul - Multiplies two digits
- * @a: Integer 
+ * @a: Integer
  * @b: Integer
  * Return: product of a and b
  */

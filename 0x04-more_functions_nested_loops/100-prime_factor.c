@@ -10,7 +10,7 @@ int main(void)
 {
 	unsigned long i, largest;
 
-	for (i = NUM; i > 1; i--)
+	for (i = NUM; i > 1; i -= 2)
 		if (NUM % i == 0)
 		{
 			largest = i;

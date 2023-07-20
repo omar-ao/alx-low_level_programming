@@ -11,9 +11,12 @@ int main(void)
 {
 	unsigned long i, largest;
 
-	for (i = 1; i < sqrt(NUM); i++)
+	for (i = (int) sqrt(NUM); i > 2; i++)
 		if (NUM % i == 0)
+		{
 			largest = i;
+			break;
+		}
 
 	printf("%lu\n", largest);
 	return (0);

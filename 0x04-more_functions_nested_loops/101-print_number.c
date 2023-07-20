@@ -6,16 +6,30 @@
  */
 void print_number(int n)
 {
+	int i, digits, tmp, divisor;
+
+	digits = 0, tmp = n;
+
+	do {
+		digits++;
+		tmp = tmp / 10;
+	} while (tmp != 0);
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n / 10 == 0)
-		_putchar(n + '0');
-	else
+
+	divisor = 1;
+
+	for (i = 1; i < digits; i++)
+		divisor = divisor * 10;
+
+	while (divisor > 0)
 	{
-		print_number(n / 10);
-		_putchar((n % 10) + '0');
+		_putchar((n / divisor) + '0');
+		n = n % divisor;
+		divisor = divisor / 10;
 	}
 }

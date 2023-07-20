@@ -1,1 +1,1 @@
-#0x02-functions_nested_loops
+# Functions and nested loops

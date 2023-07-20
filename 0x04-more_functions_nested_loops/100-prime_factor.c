@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #define NUM 612852475143
 
@@ -10,12 +11,10 @@ int main(void)
 {
 	unsigned long i, largest;
 
-	for (i = NUM; i > 1; i -= 2)
+	for (i = 1; i < sqrt(NUM); i++)
 		if (NUM % i == 0)
-		{
 			largest = i;
-			break;
-		}
+
 	printf("%lu\n", largest);
 	return (0);
 }

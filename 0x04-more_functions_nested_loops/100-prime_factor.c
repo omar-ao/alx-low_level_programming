@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #define NUM 612852475143
-#define SQ_ROOT 782848
 
 /**
  * main - Entry point
@@ -11,9 +10,12 @@ int main(void)
 {
 	unsigned long i, largest;
 
-	for (i = 1; i < SQ_ROOT; i += 2)
+	for (i = NUM; i > 1; i--)
 		if (NUM % i == 0)
+		{
 			largest = i;
+			break;
+		}
 	printf("%lu\n", largest);
 	return (0);
 }

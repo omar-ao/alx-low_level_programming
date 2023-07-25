@@ -17,5 +17,6 @@ void print_rev(char *s);
 void puts2(char *str);
 char *_strcpy(char *dest, char *src);
 void rev_string(char *s);
+void puts_half(char *str);
 
 #endif

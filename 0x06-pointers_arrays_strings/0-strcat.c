@@ -8,22 +8,16 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, j, k, srclen, destlen, len;
-	char *result = "";
+	int i, j, k, destlen, srclen;
+	char *result;
 
 	destlen = strlen(dest);
 	srclen = strlen(src);
-	len = destlen + srclen + 1;
+	result = dest;
 
-	printf("%d, %d, %d\n", destlen, srclen, len);
-	for (i = 0; i <= len; i++)
-	{
-		for (j = 0; j < destlen; j++)
-			*(result + i) = *(dest + j);
-		*(result + i) = ' ';
-		i
-		for (k = 0; k <= srclen; k++)
-			*(result + i) = *(src + k);
-	}
+	for (j = 0, i = 0; j < destlen; j++, i++)
+		*(result + i) = *(dest + j);
+	for (k = 0; k <= srclen; k++, i++)
+		*(result + i) = *(src + k);
 	return (result);
 }

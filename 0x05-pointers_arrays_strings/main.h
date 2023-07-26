@@ -3,8 +3,7 @@
 
 /* Header files */
 #include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include <ctype.h>
 
 /* Declarations */
 
@@ -16,7 +15,6 @@ void _puts(char *str);
 void print_rev(char *s);
 void puts2(char *str);
 char *_strcpy(char *dest, char *src);
-void rev_string(char *s);
-void puts_half(char *str);
-void print_array(int *a, int n);
+int _atoi(char *s);
+
 #endif

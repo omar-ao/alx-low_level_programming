@@ -19,4 +19,5 @@ char *cap_string(char *);
 int is_sep(char);
 char *leet(char *);
 char *rot13(char *);
+void print_number(int n);
 #endif

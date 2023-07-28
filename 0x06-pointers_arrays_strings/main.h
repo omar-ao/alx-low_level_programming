@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 /* declarations */
 void _putchar(int);
@@ -17,4 +18,5 @@ char *string_toupper(char *);
 char *cap_string(char *);
 int is_sep(char);
 char *leet(char *);
+char *rot13(char *);
 #endif

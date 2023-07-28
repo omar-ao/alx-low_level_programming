@@ -25,9 +25,9 @@ char *rot13(char *s)
 
 	for (i = 0, len = strlen(s); i <= len; i++)
 	{
-		if (isalpha(s[i]))
+		ascii = get_ascii(s[i]);
+		if (ascii)
 		{
-			ascii = get_ascii(s[i]);
 			rot = (s[i] - ascii) + 13;
 			rot = (rot % 26);
 			s[i] = (rot + ascii);

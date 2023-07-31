@@ -6,5 +6,5 @@
  */
 void _putchar(int c)
 {
-	write(1, &n, 1);
+	write(1, &c, 1);
 }

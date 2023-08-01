@@ -25,8 +25,11 @@ int compare(char *haystack, char *needle)
  */
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack++)
+	while (*haystack >= '\0')
+	{
 		if ((*haystack == *needle) && compare(haystack, needle))
 			return (haystack);
+		haystack++;
+	}
 	return (NULL);
 }

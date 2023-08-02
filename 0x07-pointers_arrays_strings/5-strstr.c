@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * compare - Compares two strings
+ * @haystack: String
+ * @needle: String
+ * Return: 1 if they are same otherwise 0
+ */
+int compare(char *haystack, char *needle)
+{
+	while (*haystack && *needle)
+	{
+		if (*haystack != *needle)
+			return (0);
+		haystack++;
+		needle++;
+	}
+	return (1);
+}
+/**
  * _strstr - Locates substring
  * @haystack: String to be searched
  * @needle: Substring to be located
@@ -8,23 +25,10 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, k, found = 0;
-	char *r;
-
-	for (i = 0; haystack[i] != '\0'; i++)
-	{
-		for (j = 0; needle[j] != '\0'; j++, k++)
-			if (haystack[i] != needle[j])
-				break;
-		if (k == (int) strlen(needle))
-		{
-			r = (haystack + i);
-			found = 1;
-			break;
-		}
-	}
-	if (found)
-		return (r);
-	else
-		return (NULL);
+	if (*needle == 0)
+		return (haystack);
+	while (*haystack++)
+		if ((*haystack == *needle) && compare(haystack, needle))
+			return (haystack);
+	return (NULL);
 }

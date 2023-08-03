@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * find_sqrt - Computes the square root of number using binary search
- * @low: lowest number
- * @high: highest number of the range
+ * find_sqrt - Computes the square root of number
  * @n: The number to be computed
- * Return: Square root
+ * @s: square root/ base
+ * Return: -1 if not perfect square other square root
  */
 int find_sqrt(int n, int s)
 {

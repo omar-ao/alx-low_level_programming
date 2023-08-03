@@ -7,21 +7,13 @@
  * @n: The number to be computed
  * Return: Square root
  */
-int find_sqrt(int low, int high, int n)
+int find_sqrt(int n, int s)
 {
-	int m;
-
-	if (low <= high)
-	{
-		m = (low + high) / 2;
-		if ((m * m) <= n && (m + 1) * (m + 1) > n)
-			return (m);
-		else if ((m * m) < n)
-			return (find_sqrt(m + 1, high, n));
-		else
-			return (find_sqrt(low, m - 1, n));
-	}
-	return (low);
+	if ((s * s) == n)
+		return (s);
+	if (s * s > n)
+		return (-1);
+	return (find_sqrt(n, ++s));
 }
 
 /**
@@ -31,9 +23,5 @@ int find_sqrt(int low, int high, int n)
  */
 int _sqrt_recursion(int n)
 {
-	int r = find_sqrt(0, n, n);
-
-	if ((r * r) != n)
-		return (-1);
-	return (r);
+	return (find_sqrt(n, 1));
 }

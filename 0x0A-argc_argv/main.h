@@ -7,6 +7,6 @@
 #include <string.h>
 
 /* Declarations */
-long unsigned int get_coins(long unsigned int);
+long int get_coins(long int);
 
 #endif

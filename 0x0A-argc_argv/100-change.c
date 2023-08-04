@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	long unsigned int change, amount;
+	long int change, amount;
 
 	if (argc != 2)
 	{
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	change = get_coins(amount);
-	printf("%lu\n", change);
+	printf("%li\n", change);
 	return (0);
 }
 
@@ -34,9 +34,9 @@ int main(int argc, char **argv)
  * @amount: Amount to be computed
  * Return: Number of coins
  */
-long unsigned int get_coins(long unsigned int amount)
+long int get_coins(long int amount)
 {
-	long unsigned int quarters, dimes, nickels, pennies, coins;
+	long int quarters, dimes, nickels, pennies, coins;
 
 	quarters = amount / 25;
 	amount = amount - quarters * 25;

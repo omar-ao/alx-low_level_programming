@@ -24,7 +24,7 @@ int main(void)
     printf("%d\n", r);
     r = is_prime_number(113);
     printf("%d\n", r);
-    r = is_prime_number(7919);
+    r = is_prime_number(282589933);
     printf("%d\n", r);
     return (0);
 }

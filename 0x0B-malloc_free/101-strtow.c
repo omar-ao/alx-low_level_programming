@@ -10,13 +10,15 @@ char **strtow(char *str)
 	int i, j, k, len, nw, start;
 	char **words;
 
-	if (str == NULL || *str == '\0' || strlen(str) == 1)
+	if (str == NULL || *str == '\0' || (*str == ' ' && strlen(str) == 1))
 	{
 		words = NULL;
 		return (words);
 	}
 	nw = get_number_of_words(str);
 	words = malloc(sizeof(char *) * (nw + 1));
+	if (words == NULL)
+		return (NULL);
 	for (i = 0, j = 0; i < nw; i++)
 	{
 		while (str[j] == ' ')

@@ -10,7 +10,7 @@ char **strtow(char *str)
 	int i, j, k, len, nw, start;
 	char **words;
 
-	if (str == NULL || *str == '\0' || *str == ' ')
+	if (str == NULL || *str == '\0' || (*str == ' ' && strlen(str) == 1))
 		return (NULL);
 	nw = get_number_of_words(str);
 	words = malloc(sizeof(char *) * (nw + 1));

@@ -2,6 +2,7 @@
 #define MAIN_H
 
 /* Header files */
+#include <string.h>
 #include <stdlib.h>
 
 /* Declarations */

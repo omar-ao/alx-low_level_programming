@@ -13,13 +13,13 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	for (i = 1; i < ac; ++i)
+	for (i = 0; i < ac; ++i)
 		len += strlen(av[i]);
 	len = len - 257;
 	s = malloc(len);
 	if (s == NULL)
 		return (NULL);
-	for (i = 1, k = 0; i < ac; i++)
+	for (i = 0, k = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++, k++)
 			s[k] = av[i][j];

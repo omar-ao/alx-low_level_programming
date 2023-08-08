@@ -19,19 +19,19 @@ int **alloc_grid(int width, int height)
 	{
 		grid[i] = malloc(width * sizeof(int));
 		if (grid[i] == NULL)
-			return (free_grid(grid, i));
+			return (free_matrix(grid, i));
 		for (j = 0; j < width; j++)
 			grid[i][j] = 0;
 	}
 	return (grid);
 }
 /**
- * free_grid - Frees allocated memory
+ * free_matrix - Frees allocated memory
  * @grid: 2d array
  * @n: Height of the array
  * Return: NULL
  */
-int **free_grid(int **grid, int n)
+int **free_matrix(int **grid, int n)
 {
 	int i;
 

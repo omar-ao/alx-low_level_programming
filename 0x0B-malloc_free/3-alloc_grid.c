@@ -17,7 +17,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		grid[i] = calloc(width, sizeof(int *));
+		grid[i] = calloc(width, sizeof(int));
 		if (grid[i] == NULL)
 			return (free_grid(grid, i));
 	}

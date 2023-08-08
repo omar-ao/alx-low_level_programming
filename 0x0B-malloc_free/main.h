@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 /* Declarations */
+char *_strdup(char *str);
 char *create_array(unsigned int size, char c);
 char *argstostr(int ac, char **av);
 char **free_words(char **, int);

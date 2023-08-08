@@ -13,6 +13,8 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2 == NULL)
 		s2 = "";
+	if (s1 == NULL)
+		s1 = "";
 	n = strlen(s1);
 	m = strlen(s2);
 	len = n + m;

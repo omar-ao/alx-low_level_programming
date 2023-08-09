@@ -16,7 +16,6 @@ char **strtow(char *str)
 	if (nw == 0)
 		return (NULL);
 	words = malloc(sizeof(char *) * (nw + 1));
-	printf("%ld\n", sizeof(words));
 	if (words == NULL)
 		return (NULL);
 	for (i = 0, j = 0; i < nw; i++)

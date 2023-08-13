@@ -7,7 +7,10 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	if (malloc(b) == NULL)
+	void *ptr;
+
+	ptr = malloc(b);
+	if (!ptr)
 		exit(98);
-	return (malloc(b));
+	return (ptr);
 }

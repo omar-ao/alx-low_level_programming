@@ -3,6 +3,7 @@
 
 /* Header files */
 #include <stdio.h>
+#include <stdlib.h>
 
 /* Declarations */
 void print_name(char *name, void (*f)(char *));

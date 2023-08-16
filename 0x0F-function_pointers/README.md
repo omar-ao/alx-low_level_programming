@@ -2,18 +2,18 @@
 ## Tasks
 
 ### 0. What's my name
-* File: 0-print_name.c
 A function that prints a name.
+* File: 0-print_name.c
 	* Prototype: void print_name(char *name, void (*f)(char *));
 ### 1. If you spend too much time thinking about a thing, you'll never get it done
-* File: 1-array_iterator.c
 A function that executes a function given as a parameter on each element of an array
+* File: 1-array_iterator.c
 	* Prototype: void array_iterator(int *array, size_t size, void (*action)(int));
 	* where size is the size of the array
 	* and action is a pointer to the function you need to use
 ### 2. To hell with circumstances; I create opportunities
-* File: 2-int_index.c
 A function that searches for an integer.
+* File: 2-int_index.c
 	* Prototype: int int_index(int *array, int size, int (*cmp)(int));
 	* where size is the number of elements in the array array
 	* cmp is a pointer to the function to be used to compare values
@@ -24,11 +24,11 @@ A function that searches for an integer.
 A program that performs simple operations
 	* Usage: calc num1 operator num2
 	* Operator is one of the following:
-		..* +: addition
-		..* -: subtraction
-		..* *: multiplication
-		..* /: division
-		..* %: modulo
+		* +: addition
+		* -: subtraction
+		* *: multiplication
+		* /: division
+		* %: modulo
 	* The program prints the result of the operation, followed by a new line
 	* Prints Error if the number of arguments is wrong with exit status of 98
 	* If the operator is none of the above prints Error, followed by a new line and exits with status of 99
@@ -44,11 +44,11 @@ This file contains all the function prototypes and data structures used by the p
 
 This file contains the 5 following functions
 
-	* op_add: returns the sum of a and b. Prototype: int op_add(int a, int b);
-	* op_sub: returns the difference of a and b. Prototype: int op_sub(int a, int b);
-	* op_mul: returns the product of a and b. Prototype: int op_mul(int a, int b);
-	* op_div: returns the result of the division of a by b. Prototype: int op_div(int a, int b);
-	* op_mod: returns the remainder of the division of a by b. Prototype: int op_mod(int a, int b);
+* op_add: returns the sum of a and b. Prototype: int op_add(int a, int b);
+* op_sub: returns the difference of a and b. Prototype: int op_sub(int a, int b);
+* op_mul: returns the product of a and b. Prototype: int op_mul(int a, int b);
+* op_div: returns the result of the division of a by b. Prototype: int op_div(int a, int b);
+* op_mod: returns the remainder of the division of a by b. Prototype: int op_mod(int a, int b);
 
 * 3-get_op_func.c
 

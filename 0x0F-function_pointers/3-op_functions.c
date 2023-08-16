@@ -1,4 +1,4 @@
-#include "3-cal.h"
+#include "3-calc.h"
 /**
  * op_add - Adds two numbers
  * @a: num1

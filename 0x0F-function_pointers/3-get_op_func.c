@@ -1,4 +1,4 @@
-#include "3-cal.h"
+#include "3-calc.h"
 /**
  * get_op_func - Returns a pointer to the function that corresponds to
  * the operator given as a parameter

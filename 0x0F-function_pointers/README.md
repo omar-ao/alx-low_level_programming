@@ -22,6 +22,7 @@ A function that searches for an integer.
 	* If size <= 0, return -1
 ### 3. A goal is not always meant to be reached, it often serves simply as something to aim at
 A program that performs simple operations
+
 	* Usage: calc num1 operator num2
 	* Operator is one of the following:
 		* +: addition

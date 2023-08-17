@@ -5,7 +5,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, len, skip;
+	int i = 0, len;
 	char c;
 	va_list va;
 
@@ -14,8 +14,7 @@ void print_all(const char * const format, ...)
 	while (i < len)
 	{
 		c = format[i];
-		skip = 0;
-
+		i++;
 		switch (c)
 		{
 			case 'c':
@@ -31,11 +30,10 @@ void print_all(const char * const format, ...)
 				print_string(va_arg(va, char *));
 				break;
 			default:
-				skip = 1;
+				continue;
 		}
-		if (i < len - 1 && skip == 0)
+		if (i < len)
 			printf(", ");
-		i++;
 	}
 	va_end(va);
 	printf("\n");

@@ -21,21 +21,21 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				if (vp)
 					printf("%s%s", vp, separator);
 				else
-					printf("nil%s", separator);
+					printf("(nil)%s", separator);
 			}
 			else
 			{
 				if (vp)
 					printf("%s", vp);
 				else
-					printf("nil");
+					printf("(nil)");
 			}
 		}
 	}
 	if (vp)
 		printf("%s", vp);
 	else
-		printf("nil");
+		printf("(nil)");
 	printf("\n");
 	va_end(va);
 }

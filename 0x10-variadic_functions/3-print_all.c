@@ -5,13 +5,12 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, len;
+	int i = 0;
 	char c;
 	va_list va;
 
 	va_start(va, format);
-	len = strlen(format);
-	while (i < len)
+	while (format != NULL && format[i])
 	{
 		c = format[i];
 		i++;
@@ -32,7 +31,7 @@ void print_all(const char * const format, ...)
 			default:
 				continue;
 		}
-		if (i < len)
+		if (format[i])
 			printf(", ");
 	}
 	va_end(va);

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 /**
  * before_main - Executes before main and prints string
  */

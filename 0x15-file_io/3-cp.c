@@ -47,41 +47,44 @@ int cp(char *file_from, char *file_to)
 	if (ftd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		ffc = close(ffd);
-		if (ffc == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ffd);
-			return (100);
-		}
 		return (99);
 	}
 
 	while ((br = (read(ffd, buffer, 1024))) > 0)
 	{
-		if (br == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			return (98);
-		}
 		bw = write(ftd, buffer, br);
 		if (bw == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			return (99);
 		}
 	}
 
-	ffc = close(ffd);
-	ftc = close(ftd);
-	if (ffc == -1)
+	if (br == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ffc);
-		return (100);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		return (98);
 	}
-	if (ftc == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ftc);
+	ffc = is_closed(ffd);
+	ftc = is_closed(ftd);
+	if (!(ffc || ftc))
 		return (100);
-	}
 	return (0);
+}
+
+/**
+ * is_closed - Closes open file
+ * @fd: File descriptor
+ * Return: 0 on failure or 1 on success
+ */
+int is_closed(int fd)
+{
+	int fc = close(fd);
+
+	if (fc == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		return (0);
+	}
+	return (1);
 }

@@ -33,7 +33,7 @@ int main(int ac, char **av)
 int cp(char *file_from, char *file_to)
 {
 	int ffd, ftd, ffc, ftc;
-	ssize_t br;
+	ssize_t br, bw;
 	char buffer[1024];
 
 	ffd = open(file_from, O_RDONLY);
@@ -57,7 +57,19 @@ int cp(char *file_from, char *file_to)
 	}
 
 	while ((br = (read(ffd, buffer, 1024))) > 0)
-		write(ftd, buffer, br);
+	{
+		if (br == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			return (98);
+		}
+		bw = write(ftd, buffer, br);
+		if (bw == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+			return (99);
+		}
+	}
 
 	ffc = close(ffd);
 	ftc = close(ftd);

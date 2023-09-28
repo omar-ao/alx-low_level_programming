@@ -9,25 +9,9 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index > bit_len(n))
-		return (-1);
-	return ((n & (1 << index)) != 0);
-}
-
-/**
- * bit_len - Gets the number of bits
- *
- * @n: Number
- * Return: Number of bits in n
- */
-unsigned int bit_len(unsigned long int n)
-{
-	int len = 0;
-
-	while (n)
+	if (index >= sizeof(unsigned long int) * 8)
 	{
-		len++;
-		n >>= 1;
+		return (-1);
 	}
-	return (len);
+	return ((n & (1 << index)) != 0);
 }

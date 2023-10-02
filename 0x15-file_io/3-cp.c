@@ -33,8 +33,8 @@ void cp(char *file_from, char *file_to)
 	int bufsiz = 1024;
 	char *buf, *read_err, *write_err;
 
-	read_err = "Error: Can't read from file";
-	write_err = "Error: Can't write to file";
+	read_err = "Error: Can't read from";
+	write_err = "Error: Can't write to";
 
 	flags = O_WRONLY | O_CREAT | O_TRUNC;
 	perms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;

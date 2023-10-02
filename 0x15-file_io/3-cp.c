@@ -33,7 +33,7 @@ void cp(char *file_from, char *file_to)
 	int bufsiz = 1024;
 	char *buf, *read_err, *write_err;
 
-	read_err = "Error: Can't read from";
+	read_err = "Error: Can't read from file";
 	write_err = "Error: Can't write to";
 
 	flags = O_WRONLY | O_CREAT | O_TRUNC;
@@ -59,12 +59,12 @@ void cp(char *file_from, char *file_to)
 
 	if (close(fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	if (close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	free(buf);

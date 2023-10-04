@@ -20,18 +20,21 @@ int main(int argc, char **argv)
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (1);
+	{
+		dprintf(STDERR_FILENO, "Failed to open %s\n", argv[1]);
+		exit(98);
+	}
 
 	nread = read(fd, &elf_header, sizeof(elf_header));
 	if (nread == -1)
 	{
-		perror("Error");
-		return (1);
+		dprintf(STDERR_FILENO, "Failed to read elf header\n");
+		exit(98);
 	}
 
 	if (!is_elf(elf_header))
 	{
-		dprintf(STDERR_FILENO, "Error: %s is not ELF file\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 		exit(98);
 	}
 

@@ -71,9 +71,9 @@ void print_magic(ELF elf_hdr)
 {
 	int i;
 
-	printf("  Magic:   ");
+	printf("  Magic:  ");
 	for (i = 0; i < NID; i++)
-		printf("%02x ", elf_hdr.id[i]);
+		printf(" %02x", elf_hdr.id[i]);
 	putchar(10);
 }
 
@@ -133,13 +133,13 @@ void print_os_abi(ELF elf_hdr)
 	printf("  OS/ABI:%28s", " ");
 	switch (elf_hdr.id[EI_OSABI])
 	{
-		case 0:
+		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
 			break;
-		case 2:
+		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
-		case 6:
+		case ELFOSABI_LINUX:
 			printf("UNIX - Solaries\n");
 			break;
 		default:

@@ -170,7 +170,7 @@ void print_type(ELF elf_hdr)
 			printf("EXEC (Executable file)\n");
 			break;
 		case 3:
-			printf("DYN (Shared object)\n");
+			printf("DYN (Shared object file)\n");
 			break;
 		case 4:
 			printf("CORE (Core file)\n");

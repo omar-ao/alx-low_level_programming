@@ -134,13 +134,13 @@ void print_os_abi(ELF elf_hdr)
 	switch (elf_hdr.id[EI_OSABI])
 	{
 		case 0:
-			printf("Unix - System V\n");
+			printf("UNIX - System V\n");
 			break;
 		case 2:
-			printf("Unix - NetBSD\n");
+			printf("UNIX - NetBSD\n");
 			break;
 		case 6:
-			printf("Unix - Solaries\n");
+			printf("UNIX - Solaries\n");
 			break;
 		default:
 			printf("<unknown: 53>\n");

@@ -136,11 +136,26 @@ void print_os_abi(ELF elf_hdr)
 		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
 			break;
+		case ELFOSABI_HPUX:
+			printf("UNIX - HP_UX\n");
+			break;
 		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
+			printf("LINUX\n");
+			break;
+		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaries\n");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD\n");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - True64\n");
+			break;
+		case ELFOSABI_ARM:
+			printf("ARM architecture\n");
 			break;
 		default:
 			printf("<unknown: 53>\n");

@@ -11,5 +11,6 @@ int binary_search(int *array, size_t size, int value);
 void print_sub_array(int *array, int L, int R);
 int jump_search(int *array, size_t size, int value);
 int linear_s(int *array, int L, int R, int value);
+int interpolation_search(int *array, size_t size, int value);
 
 #endif

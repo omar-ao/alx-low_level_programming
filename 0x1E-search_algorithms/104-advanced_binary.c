@@ -18,7 +18,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	index = binary_search_leftmost(array, 0, size, value);
+	index = binary_search_leftmost(array, 0, size - 1, value);
 	if (array[index] == value)
 		return (index);
 	return (-1);
@@ -41,7 +41,7 @@ int binary_search_leftmost(int *array, size_t low, size_t high, int value)
 	if (low < high)
 	{
 		printf("Searching in array: ");
-		print_sub_array(array, low, high - 1);
+		print_sub_array(array, low, high);
 		m = (low + high) / 2;
 		if (array[m] < value)
 		{

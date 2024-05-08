@@ -13,6 +13,14 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	if (!list || !(*list))
-		return (-1);
+	if (!list)
+		return (NULL);
+
+	if (list->n == value)
+		return (0);
+
+	if (size == 0)
+		return (NULL);
+
+	return (NULL);
 }
